@@ -1,7 +1,20 @@
 // alert("hi")
 
+navigator.geolocation.getCurrentPosition((position) =>{
+    console.log(position.coords.altitude);
+    console.log(position.coords.longitude);
+    loadWeatherInfo(position.coords.altitude + "," + position.coords.longitude)
+    
+    
+    
+});
+
+
+
+
+
 function loadWeatherInfo(location){
-fetch('https://api.weatherapi.com/v1/current.json?key=903766c55e6442748a992044261311&q=' + location)
+fetch('' + location)
     .then(response => response.json())
     .then(data => {
         console.log(data);
